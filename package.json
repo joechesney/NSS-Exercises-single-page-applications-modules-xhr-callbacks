@@ -1,0 +1,28 @@
+{
+  "name": "NSS-Exercises-single-page-applications-modules-xhr-callbacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "animal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joechesney/NSS-Exercises-single-page-applications-modules-xhr-callbacks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joechesney/NSS-Exercises-single-page-applications-modules-xhr-callbacks/issues"
+  },
+  "homepage": "https://github.com/joechesney/NSS-Exercises-single-page-applications-modules-xhr-callbacks#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "matchdep": "^2.0.0"
+  }
+}
