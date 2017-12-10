@@ -43,7 +43,12 @@ function displayAnimals(animal, name){
   let newNode = document.createElement("div");
   let newText = document.createTextNode(animal);
   let newHeader = document.createElement("h2");
-  let newHeaderText = document.createTextNode(name);
+  for (const key in animal) {
+    if (animal.hasOwnProperty(key)) {
+      const objKey = animal[key];
+    }
+  }
+  let newHeaderText = document.createTextNode(animal.objKey[0]);
   newHeader.appendChild(newHeaderText);
   newNode.appendChild(newHeader);
   newNode.appendChild(newText);
@@ -59,6 +64,6 @@ function showHerbivores(herbivores) {
   displayAnimals(herbivores.herbivores, "Herbivores");
 }
 
-animal.loadCarnivores(showCarnivores);
+animal.loadCarnivores(displayAnimals);
 animal.loadHerbivores(showHerbivores);
 },{"./animal":1}]},{},[2]);
