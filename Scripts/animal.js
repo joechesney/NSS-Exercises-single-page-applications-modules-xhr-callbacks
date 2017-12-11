@@ -1,32 +1,21 @@
 "use strict";
-let carnivores = [];
-let herbivores = [];
 
-const loadCarnivores = function(callbackToInvoke) {
+
+const loadAnimals = function(callbackToInvoke, someObject) {
+  // create new xhr object
   const loader = new XMLHttpRequest();
-  
+  // assign it an event listener
   loader.addEventListener("load", function() {
     // Set the value of the private array
-    
-    carnivores = JSON.parse(this.responseText);
-    // Now execute the callback function (`callbackToInvoke`) so that the caller knows that the process is complete. Make sure to pass the carnivore array as an argument.
-    callbackToInvoke(carnivores, "Carnivores");
+    // private array that is a parsed string from the json file
+    let arrayOfValues = JSON.parse(this.responseText);
+    // Now execute the callback function (`callbackToInvoke`) so that the caller knows that the process is complete. Make sure to pass the carnivore array as an argument. 
+    // the 'callbackToInvoke' ends up being 'displayAnimals' and the argument is the object
+    callbackToInvoke(arrayOfValues);
   });
 
-  loader.open("GET", "../Scripts/carnivores.json");  
+  loader.open("GET", `../Scripts/${someObject}.json`);  
   loader.send();
 };
-const loadHerbivores = function(callbackToInvoke) {
-  const loader = new XMLHttpRequest();
 
-  loader.addEventListener("load", function() {
-    // Set the value of the private array
-    herbivores = JSON.parse(this.responseText);
-
-    // Now execute the callback function (`callbackToInvoke`) so that the caller knows that the process is complete. Make sure to pass the carnivore array as an argument.
-    callbackToInvoke(herbivores, "Herbivores");
-  });
-  loader.open("GET", "../Scripts/herbivores.json");
-  loader.send();
-};
-module.exports = { loadCarnivores, loadHerbivores };
+module.exports = { loadAnimals};
